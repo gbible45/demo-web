@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<title>Demo</title>
+<link rel="icon" type="image/png" href="../../images/favicon.ico" />
+
+<!-- common -->
+<link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="../../css/bootstrap-slider.css">
+<link rel="stylesheet" type="text/css" href="../../css/jquery.jscrollpane.css">
+<link rel="stylesheet" type="text/css" href="../../css/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="../../css/css.css">
+
+<script type="text/javascript" src="../../js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="../../js/jquery-ui.js"></script>
+<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../js/bootstrap-slider.js"></script>
+<script type="text/javascript" src="../../js/jquery.mousewheel.js"></script>
+<script type="text/javascript" src="../../js/jquery.jscrollpane.min.js"></script>
+
+<!-- custom -->
+<script type="text/javascript" src="../../js/user.js"></script>
+</head>
+
+<body>
+<!-- wrap -->
+<div id="wrap" class="">
+  <!-- header -->
+  <header id="header">
+    <div class="inner">
+      <div class="pull-left">
+        <h1 class="logo"><a href="proj_list.html"><img src="../../images/top_logo.png" alt="HUB POP"></a></h1>
+      </div>
+      <div class="pull-right">
+		<div class="align_l">
+			<div class="col col-proj">
+			  <div class="dropdown">
+				<button id="btn-projt" type="button" class="btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				  <span class="txt">프로젝트</span><span class="ico arr"></span>
+				</button>
+				<ul class="dropdown-menu" role="btn-projt" aria-labelledby="btn-projt">
+				  <li><a href="proj_view_new_01.html">수요예측</a></li>
+				  <li><a href="proj_view_new_02.html">청정발전</a></li>
+				</ul>
+			  </div>
+			</div>
+			</div>
+			<div class="align_r">
+				<div class="col col-tuto">
+				  <a href="tutorial.html">
+					<button id="btn-set" type="button" class="btn" title="튜토리얼">
+					  <span class="ico"></span>
+					</button>
+				  </a>
+				</div>
+				<div class="col col-my">
+				  <div class="dropdown">
+					<button id="btn-my" type="button" class="btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					  <p class="name">홍길동님</p>
+					  <span class="ico arr"></span>
+					</button>
+					<ul class="dropdown-menu dropdown-menu-right" role="btn-my" aria-labelledby="btn-my">
+					  <li><a href="my_info_modi.html"><span class="ico ico1"></span>개인정보 수정</a></li>
+					  <li><a href="my_inqu_write.html"><span class="ico ico3"></span>공지사항</a></li>
+					  <li><a href="#"><span class="ico ico4"></span>로그아웃</a></li>
+					</ul>
+				  </div>
+				</div>
+			</div>
+		</div>
+	</div>
+  </header>
+  <!-- //header -->
+
+  <!-- container -->
+  <div id="container">
+
+	<!-- left cnt -->
+	<div class="leftCnt">
+		<div class="gnbMenu">
+			<div class="gnb-in" id="leftMenu">
+				<!-- 프로젝트 메뉴영역 -->
+				<div class="gnb_m_proj">
+					<ul class="gnb-menu dept1">
+						<li class="dept1"><a class="dept1" title="" href=""><span class="ico ico-bul"></span><span class="pj_name">프로젝트명</span><span class="ico ico-arr"></span></a>
+							<ul class="dept2">
+								<li>
+									<ul>
+										<li class="dept2">
+											<a class="dept2 on" title="" href="">프로젝트명</a>
+										</li>
+										<li class="dept2">
+											<a class="dept2" title="" href="">프로젝트명</a>
+										</li>
+										<li class="dept2">
+											<a class="dept2" title="" href="">프로젝트명</a>
+										</li>
+									</ul>
+								</li>
+								<li class="dept2 pj_create">
+									<a class="btn_create_proj" href="">프로젝트 생성</a>
+								</li>
+								<li class="dept2 pj_all">
+									<a class="btn_all_proj" href="">전체 프로젝트</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<!-- //프로젝트 메뉴영역 -->
+				<ul class="gnb-menu dept1">
+					<li>
+						<a href="#" class="on"><span class="ico ico-bul ico_workspace"></span>작업공간<span class="ico ico-arr"></span></a>
+						<ul class="dept2">
+							<li>
+								<a href="#" class="on">2차 메뉴-1 <span class="ico ico-arr"></span></a>
+								<ul class="dept3">
+									<li><a href="#" class="on">3차 메뉴-1</a></li>
+									<li><a href="#">3차 메뉴-2</a></li>
+									<li><a href="#">3차 메뉴-3</a></li>
+								</ul>
+							</li>
+							<li><a href="#">2차 메뉴-2</a></li>
+							<li><a href="#">2차 메뉴-3</a></li>
+						</ul>
+					</li>
+					<li><a href="#"><span class="ico ico-bul ico_datactlog"></span>데이터카탈로그</a></li>
+					<li><a href="#"><span class="ico ico-bul ico_analysis"></span>분석환경</a></li>
+					<li><a href="#"><span class="ico ico-bul ico_dataout"></span>데이터반출</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- //left cnt -->
+
+    <!-- rignt Cnt -->
+    <div class="rightCnt">
+		<!-- 타이틀영역 -->
+		<div class="titWrap" >
+			<h2 class="h2">타이틀</h2>
+			<div class="btnArea">
+				<button type="button" name="button" class="btn btn-list only-ico ico-refresh" tooltip-placement="bottom" uib-tooltip="새로고침"><span class="ico">새로고침</span></button>
+			</div>
+		</div>
+		<!-- //타이틀영역 -->
+      <!-- content -->
+      <div class="content">
+		<div class="readyCont">
+			<p>컨텐츠 준비중입니다.</p>
+		</div>
+	  </div>
+      <!-- //content -->
+    </div>
+    <!-- rignt Cnt -->
+  </div>
+  <!-- //container -->
+</div>
+<!-- //wrap -->
+<!-- loadding -->
+	<div class="loadWrap_spn" style="display:none;">
+		<div class="loadBox_spn">
+			<div class="lds-css ng-scope">
+				<div class="lds-spinner" style="height:100%">
+					<div class="spiner_child_1"></div>
+					<div class="spiner_child_2"></div>
+					<div class="spiner_child_3"></div>
+					<div class="spiner_child_4"></div>
+					<div class="spiner_child_5"></div>
+					<div class="spiner_child_6"></div>
+					<div class="spiner_child_7"></div>
+					<div class="spiner_child_8"></div>
+					<div class="spiner_child_9"></div>
+					<div class="spiner_child_10"></div>
+					<div class="spiner_child_11"></div>
+					<div class="spiner_child_12"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //loadding -->
+</body>
+</html>

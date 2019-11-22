@@ -1,0 +1,29 @@
+<form name="pop.userInfoPopForm" novalidate>
+    <table class="table table-striped table-bordered">
+        <colgroup>
+            <col style="width:30%;">
+            <col>
+        </colgroup>
+        <tbody>
+        <tr>
+            <td>ID</td>
+            <td>
+                <span class="w-half" type="text" name="email" disabled>{{ pop.data.email }}</span>
+            </td>
+        </tr>
+        <tr>
+            <td>{{ 'label.name' | translate }}</td>
+            <td>
+                <span class="w-half" type="text" name="name" disabled>{{ pop.data.name }}</span>
+            </td>
+        </tr>
+        <tr>
+            <td ng-if="pop.data.defaultRole == 'ADMIN'"><span ng-dblclick="main.changeAnsibleEdit();">{{ 'label.authority' | translate }}</span></td>
+            <td ng-if="pop.data.defaultRole != 'ADMIN'">{{ 'label.authority' | translate }}</td>
+            <td>
+                <span class="w-half" type="text" name="defaultRole" disabled>{{ 'label.user_role.' + pop.data.defaultRole | translate }}{{ main.ansibleEdit ? ' ( Ansible Edit )' : '' }}</span>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</form>

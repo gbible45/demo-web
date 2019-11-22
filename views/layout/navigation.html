@@ -1,0 +1,81 @@
+<div class="inner">
+	<div class="pull-left">
+		<h1 class="logo"><a href="proj_list.html"><img src="../../images/top_logo.png" alt="HUB POP"></a></h1>
+	</div>
+	<div class="pull-right">
+		<div class="align_l">
+			<div class="col col-proj">
+				<div class="dropdown">
+					<button id="btn-projt" type="button" class="btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<span class="txt">프로젝트</span><span class="ico arr"></span>
+					</button>
+					<ul class="dropdown-menu" role="btn-projt" aria-labelledby="btn-projt">
+						<li><a href="proj_view_new_01.html">수요예측</a></li>
+						<li><a href="proj_view_new_02.html">청정발전</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="align_r">
+			<div class="col col-tuto">
+				<a href="tutorial.html">
+					<button id="btn-set" type="button" class="btn" title="튜토리얼">
+						<span class="ico"></span>
+					</button>
+				</a>
+			</div>
+			<div class="col col-my">
+				<div class="dropdown">
+					<button id="btn-my" type="button" class="btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<p class="name">{{ main.userInfo.name }}</p>
+						<span class="ico arr"></span>
+					</button>
+					<ul class="dropdown-menu dropdown-menu-right" role="btn-my" aria-labelledby="btn-my">
+						<li><a href="" ng-click="main.showUserInfo($event);"><span class="ico ico1"></span>{{ 'label.user_information' | translate }}</a></li>
+						<li><a href="" ng-click="main.updateUserPassword($event, 'after');"><span class="ico ico3"></span>{{ 'label.change_password' | translate }}</a></li>
+						<li><a href="" ng-click="main.logout();"><span class="ico ico4"></span>{{ 'label.log_out' | translate }}</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--<nav class="navbar navbar-default navbar-static-top header" role="navigation" style="margin-bottom: 0">-->
+<!--	<div class="navbar-header">-->
+<!--		&lt;!&ndash; left menu show &ndash;&gt;-->
+<!--		<button ng-if="main.leftMenuOn" type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">-->
+<!--			<span class="sr-only">Toggle navigation</span>-->
+<!--			<span class="icon-bar"></span>-->
+<!--			<span class="icon-bar"></span>-->
+<!--			<span class="icon-bar"></span>-->
+<!--		</button>-->
+<!--		<h1 class="logo navbar-brand">-->
+<!--			<a class="logo_link"><img src="/images/comm/logo_comm_{{ main.sltLanguageKey }}.png"></a>-->
+<!--		</h1>-->
+<!--	</div>-->
+<!--	<ul class="nav navbar-top-links navbar-right" style="padding-right: 50px;">-->
+<!--		<li ng-if="main.multLanguage" class="dropdown" style="margin-right: 20px;">-->
+<!--			<a class="dropdown-toggle" data-toggle="dropdown" style="width: 100px;">-->
+<!--				<i class="fa fa-language fa-fw"></i>-->
+<!--				<span class="language-name">{{ main.sltLanguage.name }}</span>-->
+<!--			</a>-->
+<!--			<ul class="dropdown-menu dropdown-user">-->
+<!--				<li ng-repeat="language in main.languages" ><a href="" ng-click="main.changeLanguage(language.key);">{{ language.name }}</a></li>-->
+<!--			</ul>-->
+<!--		</li>-->
+<!--		<li class="dropdown">-->
+<!--			<a class="dropdown-toggle" data-toggle="dropdown">-->
+<!--				<i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>-->
+<!--				<span class="user-name">{{main.userInfo.name}}</span>-->
+<!--			</a>-->
+<!--			<ul class="dropdown-menu dropdown-user">-->
+<!--				<li><a href="" ng-click="main.showUserInfo($event);"><i class="fa fa-user fa-fw"></i> {{ 'label.user_information' | translate }}</a></li>-->
+<!--				<li><a href="" ng-click="main.updateUserPassword($event, 'after');"><i class="fa fa-lock fa-fw"></i> {{ 'label.change_password' | translate }}</a></li>-->
+<!--				<li class="divider"></li>-->
+<!--				<li><a href="" ng-click="main.logout();"><i class="fa fa-sign-out fa-fw"></i> {{ 'label.log_out' | translate }}</a></li>-->
+<!--			</ul>-->
+<!--		</li>-->
+<!--	</ul>-->
+<!--	&lt;!&ndash; left menu &ndash;&gt;-->
+<!--	<div ng-if="main.leftMenuOn" class="navbar-default sidebar" role="navigation" ng-include="main.leftMenuTemplateUrl"></div>-->
+<!--</nav>-->

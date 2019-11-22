@@ -1,0 +1,57 @@
+<div class="gnbMenu">
+    <div class="gnb-in" id="leftMenu">
+        <!-- 작업 공간 메뉴 영역 -->
+        <div class="gnb_m_proj">
+            <ul class="gnb-menu dept1">
+                <li class="dept1">
+                    <!-- 요구 사항 확정 후 수정 필요 -->
+                    <a class="dept1" title="{{ main.sltPortalOrgDisplayName? main.sltPortalOrgDisplayName : 'menu.workSpace.workSpace' | translate }}" href="" ng-click="main.showLeftProjectMenu($event);"><span class="ico ico-bul ico_workspace"></span>
+                        <span class="pj_name">{{main.sltPortalOrgDisplayName ? main.sltPortalOrgDisplayName : 'menu.workSpace.workSpace' | translate }}</span><span class="ico ico-arr"></span>
+                    </a>
+                    <ul class="dept2" style="display:none;">
+                        <li>
+                            <ul>
+                                <li ng-repeat="orgItem in main.portalOrgs" ng-if="$index < 5" class="dept2">
+                                    <a class="dept2" title="{{ orgItem.orgName }}" ng-class="{'on': main.sltPortalOrgId == orgItem.id}" href="" ng-click="main.goToPortalOrgPage(orgItem);">{{ orgItem.orgName }}</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dept2 pj_create">
+                            <a class="btn_create_proj" ng-click="main.addOrgProjectFormOpen($event)">{{ 'menu.workSpace.create' | translate }}</a>
+                        </li>
+                        <li class="dept2 pj_all">
+                            <a class="btn_all_proj" href="/#/comm/projects/">{{ 'menu.workSpace.all' | translate }}</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!-- 작업 공간 메뉴 메뉴영역 -->
+        <div class="gnb-menu dept1">
+            <li class="dept1">
+                <!-- 요구 사항 확정 후 수정 필요 -->
+                <a class="dept1" ng-click="main.showLeftMenu($event);">
+                    <span class="ico ico-bul ico_datactlog"></span>{{ 'menu.dataCatalog.dataCatalog' | translate }}<span class="ico ico-arr"></span>
+                </a>
+                <ul class="dept2" ng-class="{ 'open': main.leftOpenMap['comm'] }">
+                    <li class="dept2">
+                        <a class="dept2" ng-mouseover="main.mouseoverLeftMenuDepth2($event);">{{ 'menu.dataCatalog.testMenu1' | translate }}<span class="ico ico-arr"></span></a>
+                        <ul class="dept3" style='display:none;'>
+                            <li><a href="#">3차 메뉴-1</a></li>
+                            <li><a href="#">3차 메뉴-2</a></li>
+                            <li><a href="#">3차 메뉴-3</a></li>
+                        </ul>
+                    </li>
+                    <li class="dept2" ui-sref-active="active">
+                        <a class="dept2" ui-sref="dataCatalog_testMenu2" ng-mouseover="main.mouseoverLeftMenuDepth2($event,'no');">{{ 'menu.dataCatalog.testMenu2' | translate }}</a>
+                    </li>
+                    <li class="dept2" ui-sref-active="active">
+                        <a class="dept2" ui-sref="dataCatalog_testMenu3" ng-mouseover="main.mouseoverLeftMenuDepth2($event,'no');">{{ 'menu.dataCatalog.testMenu3' | translate }}</a>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="#"><span class="ico ico-bul ico_analysis"></span>분석환경</a></li>
+            <li><a href="#"><span class="ico ico-bul ico_dataout"></span>데이터반출</a></li>
+        </div>
+    </div>
+</div>

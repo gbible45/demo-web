@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<script type="text/javascript">
+	var _DOMAIN_		= document.domain;
+	var _HOST_			= document.location.host;
+	var _PORT_			= document.location.host;
+	var _ORIGIN_		= document.location.origin;
+	var _PROTOCOL_		= document.location.protocol;
+
+	var _VERSION_		= "0.2";
+	var _MODE_			= "DEBUG"; // PROD, DEV, DEBUG
+	var _DEBUG_LEVEL_	= 2; // 1, 2, 3
+	var _TIME_ = new Date().getTime();
+	var _VERSION_TAIL_HEAD_ = "?v=" + _VERSION_;
+	var _VERSION_TAIL_ = _VERSION_TAIL_HEAD_ + ((_MODE_ == "DEBUG" && _DEBUG_LEVEL_ > 2) ? "." + _TIME_ : "");
+
+	// upload 진행 바 표현 최소 파일 사이즈 - 작은 사이즈의 경우 표현이 의미 없음
+	var _UPLOADING_VIEW_MIN_SIZE_ = 10240; // 10MB
+
+	function _VersionTail() {
+		if (_MODE_ == "DEBUG" && _DEBUG_LEVEL_ >= 2) {
+			return 	_VersionTimeTail();
+		} else {
+			return _VERSION_TAIL_;
+		}
+	}
+
+	function _VersionTimeTail() {
+		return  _VERSION_TAIL_HEAD_ + "." + new Date().getTime();
+	}
+
+	var _MULT_LANGUAGE_				= false;
+	var _DEFAULT_LANGUAGE_			= "ko";
+
+	var _VIEWS_						= "views";
+	var _LAYOUT_VIEWS_				= _VIEWS_ + "/layout";
+	var _SERVER_CHECK_TIMEOUT_		= 3000;
+	var _DEFAULT_GET_TIMEOUT_		= 5000;
+	var _DEFAULT_POST_TIMEOUT_		= 600000;
+	var _UPLOAD_POST_TIMEOUT_		= 3600000;
+	var _CONTROLLERS_				= "js/controllers";
+	var _SERVICES_					= "js/services";
+	var _DIRECTIVES_				= "js/directives";
+
+	var _CSRF_TOKEN_HEADER_NAME_	= "X-CSRF-TOKEN";
+
+	var _COOKIES_PATH_					= "/";
+	var _CSRF_TOKEN_COOKIE_NAME_		= "XSRF-TOKEN";
+	var _LANGUAGE_KEY_COOKIE_NAME_		= "LANGUAGE-KEY";
+	var _USER_INFO_COOKIE_NAME_			= "USER-INFO";
+	var _ANSIBLE_EDIT_COOKIE_NAME_		= "ANSIBLE-EDIT";
+	var _LEFT_MENU_SHOW_COOKIE_NAME_	= "LEFT-MENU-SHOW";
+
+	var _LANGUAGE_KEY_CASHE_NAME_    = "cmm.languageKey";
+	var _USER_INFO_CASHE_NAME_       = "cmm.user";
+	var _LEFT_MENU_SHOW_CASHE_NAME_  = "cmm.leftMenuShow";
+
+</script>
+<html ng-app="app">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<title>KDATA</title>
+<link rel="icon" type="image/png" href="/favicon.ico" />
+<script type="text/javascript">
+
+	function loadCssLink(file) {
+		document.writeln('<link rel="stylesheet" href="'+file+'" type="text/css"/>');
+	}
+
+	function loadJavascript(file) {
+		document.writeln('<script src="'+file+'" type="text/javascript"></\script>');
+	}
+
+	var _MIN_ = (_MODE_ == "PROD") ? ".min" : "";
+
+	loadCssLink('css/components/jquery-ui.css');
+	loadCssLink('css/components/bootstrap.min.css');
+	loadCssLink('css/components/bootstrap-slider.css');
+
+	loadCssLink('css/css.css'+_VERSION_TAIL_);
+
+	loadJavascript('js/components/modules/modernizr-custom.js');
+	loadJavascript('js/components/modules/es5-shim.min.js');
+	loadJavascript('js/components/modules/es5-sham.min.js');
+	loadJavascript('js/components/modules/jquery' + _MIN_ + '.js');
+	loadJavascript('js/components/modules/jquery-ui' + _MIN_ + '.js');
+	loadJavascript('js/components/modules/jquery.mousewheel.js');
+	loadJavascript('js/components/modules/json3' + _MIN_ + '.js');
+	loadJavascript('js/components/modules/ResizeSensor.js');
+	loadJavascript('js/components/modules/ElementQueries.js');
+	loadJavascript('js/components/modules/console-sham' + _MIN_ + '.js');
+	loadJavascript('js/components/modules/bootstrap' + _MIN_ + '.js');
+	loadJavascript('js/components/modules/bootstrap-slider' + _MIN_ + '.js');
+	loadJavascript('js/components/modules/angular' + _MIN_ + '.js');
+	loadJavascript('js/components/modules/angular-sanitize' + _MIN_ + '.js');
+	loadJavascript('js/components/modules/ui-bootstrap-tpls' + _MIN_ + '.js');
+	loadJavascript('js/components/modules/moment' + _MIN_ + '.js');
+	loadJavascript('js/components/modules/moment-range' + _MIN_ + '.js');
+	loadJavascript('js/components/modules/ocLazyLoad' + _MIN_ + '.js');
+	loadJavascript('js/components/modules/angular-route' + _MIN_ + '.js');
+	loadJavascript('js/components/modules/angular-ui-router' + _MIN_ + '.js');
+	loadJavascript('js/components/modules/angular-local-storage' + _MIN_ + '.js');
+	loadJavascript('js/components/modules/angular-translate' + _MIN_ + '.js');
+	loadJavascript('js/components/modules/angular-translate-loader-static-files' + _MIN_ + '.js');
+	loadJavascript('js/components/modules/angular-validation.js');
+	loadJavascript('js/components/modules/angular-cookies' + _MIN_ + '.js');
+	loadJavascript('js/components/modules/angular-animate' + _MIN_ + '.js');
+	loadJavascript('js/components/modules/angular-aria' + _MIN_ + '.js');
+	loadJavascript('js/components/modules/angular-material' + _MIN_ + '.js');
+	loadJavascript('js/components/modules/angular-moment' + _MIN_ + '.js');
+	loadJavascript('js/components/modules/angular-loading-bar.js');
+	loadJavascript('js/components/modules/angular-file-upload' + _MIN_ + '.js');
+	loadJavascript('js/components/modules/validator' + _MIN_ + '.js');
+	loadJavascript('js/components/modules/angular-growl' + _MIN_ + '.js');
+	loadJavascript('js/components/modules/angularjs-bytes-validator.js');
+	loadJavascript('js/components/modules/metisMenu' + _MIN_ + '.js');
+	loadJavascript('js/components/modules/paging' + _MIN_ + '.js');
+
+	loadJavascript('js/components/modules/angular-resource' + _MIN_ + '.js');
+	loadJavascript('js/components/modules/angular-touch' + _MIN_ + '.js');
+
+	loadJavascript('js/cmmFunction.js'+_VERSION_TAIL_HEAD_);
+	loadJavascript('js/app.js'+_VERSION_TAIL_HEAD_);
+
+	loadJavascript('js/filters/commonFilters.js'+_VERSION_TAIL_HEAD_);
+	loadJavascript('js/directives/commonDirectives.js'+_VERSION_TAIL_HEAD_);
+
+	loadJavascript('/js/properties/constants.js'+_VERSION_TAIL_HEAD_);
+	loadJavascript('/js/properties/loadFiles.js'+_VERSION_TAIL_HEAD_);
+	loadJavascript('js/properties/sitemap.js'+_VERSION_TAIL_HEAD_);
+
+	loadJavascript('js/services/commonServices.js'+_VERSION_TAIL_HEAD_);
+	loadJavascript('js/services/portalServices.js'+_VERSION_TAIL_HEAD_);
+	loadJavascript('js/services/userServices.js'+_VERSION_TAIL_HEAD_);
+
+	loadJavascript('js/controllers/commonControllers.js'+_VERSION_TAIL_HEAD_);
+	loadJavascript('js/controllers/portalControllers.js'+_VERSION_TAIL_HEAD_);
+	loadJavascript('js/controllers/user/userControllers.js'+_VERSION_TAIL_HEAD_);
+
+</script>
+
+</head>
+<body id="mainCtrl" class="{{ main.bodyLayout }}" ng-controller="mainCtrl as main" nv-file-drop="" uploader="main.uploader">
+<div id="wrap" ui-view="mainBody" ng-class="main.mainLayoutClass"></div>
+<div growl style="z-index: 99999;"></div>
+</body>
+</html>

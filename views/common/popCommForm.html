@@ -1,0 +1,14 @@
+<md-dialog draggable drag-handle=".modal-header" aria-label="{{dialogOptions.title}}" class="{{dialogOptions.dialogClassName}} modal-content">
+	<div class="modal-header">
+		<h1 class="modal-title">{{dialogOptions.title}}</h1>
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="dialogOptions.popCancel()"><span aria-hidden="true">×</span></button>
+	</div>
+	<div class="modal-body">
+		<div ng-hide="dialogOptions.actionLoading" ng-include="dialogOptions.templateUrl">
+		</div>
+	</div>
+	<div class="modal-footer" ng-show="dialogOptions.btnTemplateUrl" ng-include="dialogOptions.btnTemplateUrl">
+	</div>
+	<div class="modal-footer" ng-show="dialogOptions.btnTemplate" dynamic-template="dialogOptions.btnTemplate">
+	</div>
+</md-dialog>

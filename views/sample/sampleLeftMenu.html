@@ -1,0 +1,124 @@
+<div class="sidebar-nav navbar-collapse">
+    <ul class="nav in" id="side-menu">
+        <li class="sidebar-search">
+            <div class="input-group custom-search-form">
+                <input type="text" class="form-control" placeholder="Search..." />
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </span>
+            </div>
+        </li>
+        <li ui-sref-active="active">
+            <a ui-sref="sample"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+        </li>
+        <li ui-sref-active="active">
+            <a ui-sref="sample_charts"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span></span></a>
+        </li>
+        <li ui-sref-active="active">
+            <a ui-sref="sample_tables"><i class="fa fa-table fa-fw"></i> Tables</a>
+        </li>
+        <li ui-sref-active="active">
+            <a ui-sref="sample_forms"><i class="fa fa-edit fa-fw"></i> Forms</a>
+        </li>
+        <li ui-sref-active="active">
+            <a ui-sref="sample_pop"><i class="fa fa-square fa-fw"></i> Pop</a>
+        </li>
+        <li ng-class="{active: main.sidebarMenu.collapseVar==1}">{{dropDown}}
+            <a href="" ng-click="main.sidebarMenu.check(1)"><i class="fa fa-wrench fa-fw"></i> UI Elements<span
+                    class="fa arrow"></span></a>
+            <ul class="nav nav-second-level" collapse="main.sidebarMenu.collapseVar!=1">
+                <li ui-sref-active="active">
+                    <a ui-sref="sample_panels_wells">Panels and Wells</a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="sample_buttons">Buttons</a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="sample_notifications">Notifications</a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="sample_typography">Typography</a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="sample_icons"> Icons</a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="sample_grid">Grid</a>
+                </li>
+            </ul>
+            <!-- /.nav-second-level -->
+        </li>
+<!--
+        <li ng-class="{active: main.sidebarMenu.collapseVar==2}">
+            <a href="" ng-click="main.sidebarMenu.check(2)"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span
+                    class="fa arrow"></span></a>
+            <ul class="nav nav-second-level" collapse="main.sidebarMenu.collapseVar!=2">
+                <li>
+                    <a href="">Second Level Item</a>
+                </li>
+                <li>
+                    <a href="">Second Level Item</a>
+                </li>
+                <li ng-init="third=!third" ng-class="{active: main.sidebarMenu.multiCollapseVar==3}">
+                    <a href="" ng-click="main.sidebarMenu.multiCheck(3)">Third Level <span class="fa arrow"></span></a>
+                    <ul class="nav nav-third-level" collapse="main.sidebarMenu.multiCollapseVar!=3">
+                        <li>
+                            <a href="">Third Level Item</a>
+                        </li>
+                        <li>
+                            <a href="">Third Level Item</a>
+                        </li>
+                        <li>
+                            <a href="">Third Level Item</a>
+                        </li>
+                        <li>
+                            <a href="">Third Level Item</a>
+                        </li>
+
+                    </ul>
+                </li>
+            </ul>
+        </li>
+-->
+        <li ng-class="{active: main.sidebarMenu.collapseVar==4}">
+            <a href="" ng-click="main.sidebarMenu.check(4)"><i class="fa fa-files-o fa-fw"></i> Demo Pages<span
+                    class="fa arrow"></span></a>
+            <ul class="nav nav-second-level" collapse="main.sidebarMenu.collapseVar!=4"> 
+                    <li><a href="" ng-click="main.goToSampleDemoPage('sample')">Domo Sample</a></li>
+<!--
+                    <li><a href="" ng-click="main.goToSampleDemoPage('dashboard_service')">dashboard service</a></li>
+                    <li><a href="" ng-click="main.goToSampleDemoPage('dashboard_resource')">dashboard_resource</a></li>
+                    <li><a href="" ng-click="main.goToSampleDemoPage('baremetal')">baremetal</a></li>
+                    <li><a href="" ng-click="main.goToSampleDemoPage('baremetal_node')">baremetal_node</a></li>
+                    <li><a href="" ng-click="main.goToSampleDemoPage('baremetal_set')">baremetal_set</a></li>
+-->
+                   <!-- <a href="" ng-click="main.goToSampleDemoPage('baremetal_set_b')">baremetal_set_b</a>-->
+                    <li ng-init="third=!third" ng-class="{active: main.sidebarMenu.multiCollapseVar==3}">
+                        <a href="" ng-click="main.sidebarMenu.multiCheck(3)">baremetal_set_b<span class="fa arrow"></span></a>
+                        <ul class="nav nav-third-level" collapse="main.sidebarMenu.multiCollapseVar!=3">
+                            <li>
+                                <a href="" ng-click="main.goToSampleDemoPage('DHCP_set')">{{ 'label.dhcp_settings' | translate }}</a>
+                            </li>
+                            <li>
+                                <a href="" ng-click="main.goToSampleDemoPage('OS_set')">{{ 'label.os_settings' | translate }}</a>
+                            </li>
+                            <li>
+                                <a href="" ng-click="main.goToSampleDemoPage('OS_img')">{{ 'label.os_image' | translate }}</a>
+                            </li>
+                            <li>
+                                <a href="" ng-click="main.goToSampleDemoPage('DNS_list')">{{ 'label.dns_management' | translate }}</a>
+                            </li>
+
+                        </ul>
+                        <!-- /.nav-third-level -->
+                    </li>
+                    <li><a href="" ng-click="main.goToSampleDemoPage('openstack')">openstack</a></li>
+                    <li><a href="" ng-click="main.goToSampleDemoPage('login')">login</a></li> 
+                    <li><a href="" ng-click="main.goToSampleDemoPage('deployDetail')">deployDetail</a></li>
+            </ul>
+            <!-- /.nav-second-level -->
+        </li>
+    </ul>
+</div>

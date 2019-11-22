@@ -1,0 +1,44 @@
+<form name="pop.memberAddPopForm" novalidate>
+    <table class="table table-striped table-bordered">
+        <colgroup>
+            <col style="width:30%;">
+            <col>
+        </colgroup>
+        <tbody>
+        <tr>
+            <td>ID</td>
+            <td>
+                <input ng-if="pop.mode == 'create'" type="text" name="email" ng-model="pop.data.email" validation="required|alpha_num|min_len:3|max_len:20|custom:pop.checkIdValidation(pop.data.email)" class="form-control w-half">
+                <span class="w-half" ng-if="pop.mode == 'update'" type="text" name="email" disabled>{{ pop.data.email }}</span>
+            </td>
+        </tr>
+        <tr>
+            <td>{{ 'label.name' | translate }}</td>
+            <td>
+                <input type="text" name="name" ng-model="pop.data.name" validation="required" class="form-control w-half">
+            </td>
+        </tr>
+        <tr ng-if="pop.mode == 'create'">
+            <td>{{ 'label.initial_password' | translate }}</td>
+            <td>{{ pop.data.email ? (pop.data.email + pop.userPasswordTail) : "" }}</td>
+        </tr>
+        <tr>
+            <td>{{ 'label.authority' | translate }}</td>
+            <td>
+                <div class="radio radio-inline">
+                    <input type="radio" name="rule" id="admin" ng-model="pop.data.defaultRole" value="DEVELOPER" class="ng-pristine ng-untouched ng-valid ng-not-empty">
+                    <label for="admin" class="label">{{'label.user_role.DEVELOPER' | translate}}</label>
+                </div>
+                <div class="radio radio-inline">
+                    <input type="radio" name="rule" id="developer" ng-model="pop.data.defaultRole" value="AUDITOR" class="ng-pristine ng-untouched ng-valid ng-not-empty">
+                    <label for="developer" class="label">{{'label.user_role.AUDITOR' | translate}}</label>
+                </div>
+                <div class="radio radio-inline"> 
+                    <input type="radio" name="rule" id="auditor" ng-model="pop.data.defaultRole" value="MONITOR" class="ng-pristine ng-untouched ng-valid ng-not-empty">
+                    <label for="auditor" class="label">{{'label.user_role.MONITOR' | translate}}</label>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</form>

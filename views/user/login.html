@@ -1,0 +1,36 @@
+<form name="contents.loginForm">
+    <div class="one_in">
+        <!-- login -->
+        <div class="memWrap">
+            <div class="mem-hd">
+                <h1>Demo</h1>
+                <h2>Demo {{ 'label.login' | translate }}</h2>
+            </div>
+
+            <div class="mem-body">
+                <ul class="ul-join">
+                    <li>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <span class="ico type1"></span>
+                            </div>
+                            <input class="form-control textfield is-invalid" placeholder="{{ 'message.input_type_id_email' | translate }}" id="input_email" name="email" type="text" ng-model="contents.loginInfo.email" ng-keypress="($event.charCode==13)? contents.loginAction($event) : return" validation="required" autofocus>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <span class="ico type2"></span>
+                            </div>
+                            <input class="form-control textfield" placeholder="{{ 'message.input_type_pwd' | translate }}" name="password" id="input_password" type="password" ng-model="contents.loginInfo.password" value="" ng-keypress="($event.charCode==13)? contents.loginAction($event) : return" validation="required">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="mem-foot">
+                <input type="button" name="button" class="btn btn-color1" title="{{ 'label.login' | translate }}" value="{{ 'label.login' | translate }}" id="input_go" class="loginBtn" ng-disabled="contents.isLoginAction" ng-click="contents.loginAction($event)">
+            </div>
+        </div>
+        <!-- //login-->
+    </div>
+</form>
